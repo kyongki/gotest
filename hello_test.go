@@ -9,8 +9,13 @@ func TestHello(t *testing.T) {
 		assertCorrectMsg(t, got, want)
 	})
 	t.Run("hello with default", func(t *testing.T) {
-		got := Hello("")
+		got := Hello("", "English")
 		want := "Hello, Everyone"
+		assertCorrectMsg(t, got, want)
+	})
+	t.Run("support Spanish greeting", func(t *testing.T) {
+		got := Hello("Elodie", "Spanish")
+		want := "Hola, Elodie"
 		assertCorrectMsg(t, got, want)
 	})
 }
